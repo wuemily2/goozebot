@@ -1,1 +1,1 @@
-host: goozeTest.py
+web: goozeTest.py
