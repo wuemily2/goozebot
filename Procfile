@@ -1,1 +1,1 @@
-web: goozeTest.py
+web: python goozeTest.py
