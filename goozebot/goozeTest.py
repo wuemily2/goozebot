@@ -35,7 +35,14 @@ prefix = 'gooze '
 description = 'The Gooze stares menacingly'
 category = "Gooze Calls"
 
-my_bot = Bot(command_prefix=prefix, description=description)
+
+class GoozeBot(Bot):
+    def __init__(self, prefix_set, description_set):
+        super().__init__(command_prefix= prefix_set, description=description_set)
+        print("initialized")
+
+
+my_bot = GoozeBot(prefix, description)
 
 
 # For context on async/await https://docs.python.org/3/library/asyncio-task.html
@@ -62,6 +69,7 @@ load_commands(my_bot)
 my_bot.randomdata = 1
 print(my_bot.randomdata)
 # Yeet
+
 
 @my_bot.event
 async def on_message(message):
