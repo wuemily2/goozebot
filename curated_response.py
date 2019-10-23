@@ -11,10 +11,15 @@ def load_curated_gooze_response(bot: Bot) -> str:
     # ==== affection Command ====
     command = ("affection", "You show the goose some affection.")
 
-    @bot.command(name=command[0], help=command[1])
+    #@bot.command(name=command[0], help=command[1])
+    @discord.ext.commands.command() #Create the command
     async def affection(context):
         text = '*affectionate hoooooonk* *(Oh hoomin)*'
         await context.message.channel.send(text)
+    bot.add_command(affection)
+    # Add the command; we can do it this way in order to
+    # allow different bots the
+    # same event
 
     help_string += "\t" + ": ".join(command) + "\n"
 

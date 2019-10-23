@@ -58,6 +58,7 @@ async def on_ready():
     await my_bot.change_presence(activity=game, status=discord.Status.online)
 
 
+
 load_commands(my_bot)
 
 
