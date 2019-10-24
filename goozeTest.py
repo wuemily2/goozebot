@@ -1,9 +1,10 @@
 from __future__ import unicode_literals
-from dum import load_commands
 import discord
+
+from gooze_command_loader import load_commands
 from discord.ext.commands import Bot
 from typing import Union, List, Dict
-from flexible_input import *
+from factory_response import *
 
 # before you start, you must have the discord.py rewrite library installed. to do this, type the following to command prompt.
 #
@@ -38,7 +39,7 @@ category = "Gooze Calls"
 
 class GoozeBot(Bot):
     def __init__(self, prefix_set, description_set):
-        super().__init__(command_prefix= prefix_set, description=description_set)
+        super().__init__(command_prefix=prefix_set, description=description_set)
         print("initialized")
 
 
@@ -47,8 +48,7 @@ my_bot = GoozeBot(prefix, description)
 
 # For context on async/await https://docs.python.org/3/library/asyncio-task.html
 
-
-@my_bot.event
+# @my_bot.event
 async def on_ready():
     print('logged in')
     print('discord version : ' + discord.__version__)
@@ -56,39 +56,17 @@ async def on_ready():
                             type=2)
     # Types listed in help
     await my_bot.change_presence(activity=game, status=discord.Status.online)
-
-
+my_bot.add_listener(on_ready)  # alternative to @my_bot.event
 
 load_commands(my_bot)
 
 
-# Should maybe Create a general checking function for a given list of string
-# against message content.
-# Have "Check combos of one" and "check combos of two".
-
-# Should use this for loading random data onto the bot
-my_bot.randomdata = 1
-print(my_bot.randomdata)
-# Yeet
-
-
 @my_bot.event
 async def on_message(message):
-    # print(message.content)
-    # await cannot occur outside of async
     channel = message.channel
-    if check_start_contents_gooze(
-            message.content):  # Is there an endwith thing?
-        await channel.send('Hiss!')
-    elif check_goose_yeet(message.content):
-        await channel.send('Hoonnnnnnnkkkkkkkkkkkkkkkkkkkkkk!!!!!!!!!!!!!!')
-    elif message.content == "Good goose":
-        await channel.send("I luv u. <3")
-    elif message.content.startswith("Gooze died for our sins"):
-        await channel.send("*The image of crucifixion floods your mind." +
-                           " You are filled with sorrow...*")
-    elif message.content.startswith("gooze, what do you say?"):
-        await channel.send("*Honk!* \"Whatever you say! It's up to you.\"")
+    factory_response = return_factory_response(message.content)
+    if factory_response != '':
+        await channel.send(factory_response)
     else:
         await my_bot.process_commands(message)
 

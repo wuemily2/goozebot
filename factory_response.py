@@ -1,12 +1,38 @@
 from __future__ import unicode_literals, annotations
-import discord
-from discord.ext.commands import Bot
-import random
-import asyncio
+from csv_instructions_parser import remove_blanks
 
-check_list_goose = ["gooz", "gooze", "goos", "gose", "goose", "guse",
-                    "guuuse",
-                    "guse"]
+check_list_goose = ["gooz", "gooze", "goos",
+                    "gose", "goose", "guse",
+                    "guuuse","guse"]
+
+
+def return_factory_response(message: str) -> str:
+    message = message.lower()
+    message_args = message.split(' ')
+    remove_blanks(message_args)
+    if len(message_args) == 2 and message_args[0] == 'gooze':
+        with open('chat_log.txt', 'a') as textfile:
+            textfile.write(message + '\n')
+        if message_args[1] == 'affection':
+            return '*affectionate hoooooonk* *(Oh hoomin)*'
+        elif message_args[1] == 'hiss':
+            return '*The Gooze hisses back!*'
+        elif message_args[1] == 'honk':
+            return 'honk honk honk... honk ... honk honk ... honk honk'
+
+    if check_start_contents_gooze(message):  # Is there an endwith thing?
+        return 'Hiss!'
+    elif check_goose_yeet(message):
+        return 'Hoonnnnnnnkkkkkkkkkkkkkkkkkkkkkk!!!!!!!!!!!!!!'
+    elif message == "good gooze":
+        return "I luv u. <3"
+    elif message.startswith("gooze died for our sins"):
+        return "*The image of crucifixion floods your mind." + \
+               " You are filled with sorrow...*"
+    elif message.startswith("gooze, what do you say?"):
+        return "*Honk!* \"Whatever you say! It's up to you.\""
+
+    return ''
 
 
 def compare_contents(message_content: str, target: List[str]) -> bool:
