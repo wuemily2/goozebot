@@ -85,8 +85,27 @@ def load_dm_capabilities(bot: Bot) -> str:
             await context.message.channel.send("Message sent on " + channeru.name)
         except:
             await context.message.channel.send("Failed to send message.")
-            return None
 
     help_string += "\t" + ": ".join(command) + "\n"
+
+    command = ("tell", "When you want to gooze to tell someone" +
+                       " to do something for you")
+
+    @bot.command(name=command[0], help=command[1])
+    async def tell(context, victim, *args):
+        try:
+            if "study" in args[0:2]:
+                await context.message.channel.send("GO STUDY," + victim + "!!!")
+                try:
+                    victim = (discord.User)(victim)
+                    await victim.send("Honk! Please Study!")
+                except:
+                    await context.message.channel.send(":(")
+            else:
+                await context.message.channel.send("I'm not sure what to honk.")
+        except:
+            await context.message.channel.send(
+                "Failed to tell anyone anything.")
+        await context.message.delete()
 
     return help_string
