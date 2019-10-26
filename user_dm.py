@@ -92,12 +92,13 @@ def load_dm_capabilities(bot: Bot) -> str:
                        " to do something for you")
 
     @bot.command(name=command[0], help=command[1])
-    async def tell(context, victim, *args):
+    async def tell(context, victim:discord.User, *args):
         try:
             if "study" in args[0:2]:
-                await context.message.channel.send("GO STUDY," + victim + "!!!")
+                await context.message.channel.send("GO STUDY,"
+                                                   + victim.name.upper()
+                                                   + "!!!")
                 try:
-                    victim = (discord.User)(victim)
                     await victim.send("Honk! Please Study!")
                 except:
                     await context.message.channel.send(":(")
