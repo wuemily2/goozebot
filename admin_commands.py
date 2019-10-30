@@ -13,28 +13,12 @@ def load_admin_commands(bot: Bot, fixed_response: str, name: str) -> str:
     # ==== Say Command ====
     help_string = "Admin Commands: \n"
 
-    command = ("say", name + " says what you say. (admin)")
-
     global admins
-
-    @bot.command(name=command[0], help=command[1])
-    async def say(context, *args):
-        if context.message.author.id in admins:
-            channeru = context.message.channel
-            await context.message.delete()
-            await channeru.send(" ".join(args))
-
-        else:
-            await context.message.channel.send("...")
-            await asyncio.sleep(3)
-            await context.message.channel.send(fixed_response)
-
-    help_string += "\t" + ": ".join(command) + "\n"
 
     command = ("bite", "The " + name + " bites the target.")
 
     @bot.command(name=command[0], help=command[1])
-    async def bit(context, arg: str):
+    async def bite(context, arg: str):
         if context.message.author.id in admins:
             await context.message.channel.send("*The Goose Bites " + arg + "," +
                                                " die heathen!*")
