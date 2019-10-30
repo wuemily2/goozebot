@@ -20,7 +20,7 @@ def return_factory_response(message: str) -> str:
         elif message_args[1] == 'honk':
             return 'honk honk honk... honk ... honk honk ... honk honk'
         elif message_args[1] == 'say':
-            return " ".join(message[2:])
+            return " ".join(message_args[2:])
 
     if check_start_contents_gooze(message):  # Is there an endwith thing?
         return 'Hiss!'
