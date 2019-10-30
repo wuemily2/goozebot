@@ -112,6 +112,6 @@ def load_dm_capabilities(bot: Bot) -> str:
     @bot.command()
     async def say(context, *args):
         await context.message.delete()
-        await " ".join(args)
+        await context.channel.send(" ".join(args))
 
     return help_string
