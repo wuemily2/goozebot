@@ -35,6 +35,6 @@ def load_commands(bot: Bot):
     async def messenger(context):
         await context.message.channel.send(gooze_messaging_info)
 
-    @bot.command(passcontext=True, name="admin")
-    async def admin(context):
+    @bot.command(passcontext=True, name="admin_commands")
+    async def admin_commands(context):
         await context.message.channel.send(gooze_admin)

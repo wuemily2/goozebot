@@ -18,3 +18,8 @@ gooze pet
 gooze pet
 gooze pet
 gooze pet
+gooze help
+gooze simple
+gooze messenger
+gooze admin_commands
+gooze admin_commands

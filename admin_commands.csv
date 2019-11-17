@@ -1,11 +1,11 @@
-```	
-____Admin Gooze Commands____	
-These are admin commands.	
-	
-The below are things only the creator can do:	
-admin	The creator can grant someone admin for as long as goozebot doesn't crash.
-remove_admin	The creator can remove someone's admin permissions.
-	
-The below are things that admin can do:	
-bite	The gooze bites the target if you're an admin... but if you're not... Are you sure you want to test your luck?
-```	
+"```	",
+"____Admin Gooze Commands____	",
+"These are admin commands.	",
+"	",
+"The below are things only the creator can do:	",
+admin,The creator can grant someone admin for as long as goozebot doesn't crash.
+remove_admin,The creator can remove someone's admin permissions.
+"	",
+"The below are things that admin can do:	",
+bite,The gooze bites the target if you're an admin... but if you're not... Are you sure you want to test your luck?
+"```	",
