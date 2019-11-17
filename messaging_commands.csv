@@ -1,0 +1,9 @@
+```,
+__________Messaging Commands__________,
+These are the messaging commands. The gooze can send messages to users and channels if the gooze has access to them via a server.,
+,
+message,"Type ""gooze message <user_id or tag> <your message>"" to send a message to a user."
+remote,"Type ""gooze remote <channel_id or tag> <your message>"" to send a message on a given channel."
+say,"Type ""gooze say <your message>"". The gooze will hide your message by deleting it, and send a your message on the same channel that you ran the command on."
+tell,"Type ""gooze tell <user_id or tag> to <do some action>"". For example, you can tell someone to study :) ."
+```,

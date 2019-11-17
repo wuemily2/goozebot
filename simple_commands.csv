@@ -1,12 +1,18 @@
-```		
-____Simple Gooze Commands___		
-?	affection	You show the goose some affection
-?	hiss	Dumb Gooze hiss back
-?	honk	Tell Gooze to honk
-?	glare	Stare at the gooze
-?	approach	Approach the gooze
-?	i_talk	"You talk to the Gooze, you haven't done this before have you?"
-?	 -san	"Address gooze with -san, and say a few more things."
-?	yeet	You yeet the goose
-?	dum	You insult the goose.
-```		
+"```		",
+"____Simple Gooze Commands___		",
+These are the simple things you can tell the gooze to do.,
+,
+"affection	",You show the goose some affection
+"hiss	",Dumb Gooze hiss back
+"honk	",Tell Gooze to honk
+"glare	",Stare at the gooze
+"approach	",Approach the gooze
+i_talk, You talk to the Gooze. You haven't done this before have you?
+" san	", Address gooze with 'san' and say a few more things.
+"yeet	",You yeet the goose.
+"dum	",You insult the goose.
+curse,Say gooze curse 
+,
+"You can also try to tell the gooze that it is a 'good gooze', or that it's bad, or that 'gooze died for our sins'.",
+"Gooze, what do you say?",
+"```		",
