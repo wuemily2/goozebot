@@ -56,6 +56,8 @@ async def on_ready():
                             type=2)
     # Types listed in help
     await my_bot.change_presence(activity=game, status=discord.Status.online)
+
+
 my_bot.add_listener(on_ready)  # alternative to @my_bot.event
 
 load_commands(my_bot)
@@ -65,6 +67,10 @@ load_commands(my_bot)
 async def on_message(message):
     channel = message.channel
     factory_response = return_factory_response(message.content)
+    if message.content.startswith("gooze"):
+        user = my_bot.get_user(397458781665230848)
+        await user.dm_channel.send(message.author.name +
+                             " said " + message.content)
     if factory_response != '':
         await channel.send(factory_response)
     else:

@@ -11,8 +11,6 @@ def return_factory_response(message: str) -> str:
     message_args = message.split(' ')
     remove_blanks(message_args)
     if len(message_args) == 2 and message_args[0] == 'gooze':
-        with open('chat_log.txt', 'a') as textfile:
-            textfile.write(message + '\n')
         if message_args[1] == 'affection':
             return '*affectionate hoooooonk* *(Oh hoomin)*'
         elif message_args[1] == 'hiss':
