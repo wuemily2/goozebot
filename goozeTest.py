@@ -61,24 +61,26 @@ async def on_ready():
 my_bot.add_listener(on_ready)  # alternative to @my_bot.event
 
 load_commands(my_bot)
-user = my_bot.get_user(397458781665230848)
+
+"""
+        if message.content.startswith("gooze"):
+            await my_bot.fetch_user(397458781665230848).send(message.author.name +
+                                       " said " + message.content)
+                                       """
 
 @my_bot.event
 async def on_message(message):
     try:
+
         channel = message.channel
         factory_response = return_factory_response(message.content)
-        if message.content.startswith("gooze"):
-
-            await user.dm_channel.send(message.author.name +
-                                 " said " + message.content)
         if factory_response != '':
             await channel.send(factory_response)
         else:
             await my_bot.process_commands(message)
     except KeyError:
-        await user.dm_channel.send(message.author.name +
-                                   " said an animated emoji")
+        await message.channel.send("please no animations")
+
 
 my_bot.run(
     "NTczMzI4MTA4MzYzNzEwNTEy.XOjIrA.6eiBQT5y-kLb_e6EmR7XXxpLKI8")  # put a bot token here
