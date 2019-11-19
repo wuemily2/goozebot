@@ -68,6 +68,7 @@ load_commands(my_bot)
                                        " said " + message.content)
                                        """
 
+
 @my_bot.event
 async def on_message(message):
     try:
