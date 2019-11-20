@@ -76,6 +76,8 @@ def load_dm_capabilities(bot: Bot) -> str:
 
     help_string += "\t" + ": ".join(command) + "\n"
 
+
+
     command = ("remote", "when you want to send a remote message")
 
     @bot.command(name = command[0], help=command[1])

@@ -7,6 +7,9 @@ def test_write(user_id: str):
     with open(user_id + '.txt','a') as file:
         file.write("test successful")
 
+@commands.command(name='bless')
+async def bless(context):
+    pass
 
 
 @commands.command(name='pet')
