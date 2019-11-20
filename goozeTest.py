@@ -72,7 +72,6 @@ load_commands(my_bot)
 @my_bot.event
 async def on_message(message):
     try:
-
         channel = message.channel
         factory_response = return_factory_response(message.content)
         if factory_response != '':
