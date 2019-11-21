@@ -1,10 +1,14 @@
 from __future__ import unicode_literals
 import discord
+import sentry_sdk
 
 from gooze_command_loader import load_commands
 from discord.ext.commands import Bot
 from typing import Union, List, Dict
 from factory_response import *
+
+sentry_sdk.init("https://e0e7607698e14468b9f94fec3eda718f@sentry.io/1829813")
+#division_by_zero = 1 / 0
 
 # before you start, you must have the discord.py rewrite library installed. to do this, type the following to command prompt.
 #
