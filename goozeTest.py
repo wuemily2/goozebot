@@ -6,6 +6,7 @@ from gooze_command_loader import load_commands
 from discord.ext.commands import Bot
 from typing import Union, List, Dict
 from factory_response import *
+from bot_token import bot_token # A string containing the bot_token
 
 sentry_sdk.init("https://e0e7607698e14468b9f94fec3eda718f@sentry.io/1829813")
 #division_by_zero = 1 / 0
@@ -86,7 +87,6 @@ async def on_message(message):
         await message.channel.send("please no animations")
 
 
-my_bot.run(
-    "NTczMzI4MTA4MzYzNzEwNTEy.XOjIrA.6eiBQT5y-kLb_e6EmR7XXxpLKI8")  # put a bot token here
+my_bot.run(bot_token)  # put a bot token here
 
 # Permissions integer 207872
